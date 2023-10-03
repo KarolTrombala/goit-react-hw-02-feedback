@@ -1,16 +1,36 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+
+import React, {Component} from 'react';
+import Statistics from './Statistics/Statistics';
+
+
+class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  render() {
+    const { good, neutral, bad } = this.state;
+    // const totalFeedback = this.countTotalFeedback();
+    // const positivePercentage = this.countPositiveFeedbackPercentage();
+
+    return (
+      <div>
+        <h2>Please give feedback:</h2>
+        {/* <FeedbackOptions
+          options={['good', 'neutral', 'bad']}
+          onLeaveFeedback={this.handleFeedback}
+        /> */}
+        <Statistics
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={totalFeedback}
+          positivePercentage={positivePercentage}
+        />
+      </div>
+    );
+  }
+}
+  export default App;
