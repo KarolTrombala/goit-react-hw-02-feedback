@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './Feedbackoptions/Feedbackoptions';
+import { Section } from './Section/Section';
 
 class App extends Component {
   state = {
@@ -37,11 +38,13 @@ class App extends Component {
         fontSize: 20,
         color: '#010101',
       }}>
-        <h2>Please leave feedback:</h2>
+        <Section title={'Please leave feedback'}>
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
          
         />
+        </Section>
+        <Section title={'Statistics'}>
         <Statistics
           good={good}
           neutral={neutral}
@@ -49,6 +52,7 @@ class App extends Component {
           total={totalFeedback}
           positivePercentage={positivePercentage}
         />
+        </Section>
       </div>
     );
   }
