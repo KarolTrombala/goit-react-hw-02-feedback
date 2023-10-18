@@ -32,5 +32,3 @@ Statistics.propTypes = {
   total: PropTypes.number,
   positivePercentage: PropTypes.number,
 };
-
-export default Statistics;
